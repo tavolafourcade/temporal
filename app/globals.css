@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AeonikPro";
+  src: url("/fonts/AeonikProTRIAL-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AeonikPro";
+  src: url("/fonts/AeonikProTRIAL-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AeonikPro";
+  src: url("/fonts/AeonikProTRIAL-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AeonikPro";
+  src: url("/fonts/AeonikPro-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AlbraText";
+  src: url("/fonts/AlbraText-MediumItalic.otf") format("opentype");
+  font-weight: medium;
+  font-style: italic;
+  font-weight: 500;
+}
+
+body {
+  font-family: "AeonikPro", sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary: #008bff;
+    --secondary: #4e59d5;
+    --color-ttwilight-navy: #282943;
+    --color-whispering-white: #f9fafb;
+    --primary-light: #e5f3ff;
+    --color-grey-ash: #babac6;
+    --color-grey-subtext: #9c9dad;
+    --color-grey-hover: #f8f8f8;
+    --color-grey-neutral: #e5ecf1;
+    --color-active: #0eba69;
+
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  .active {
+    color: var(--accent-color);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.border-dashed-custom {
+  --b: 1px;
+  --s: 8px;
+  --c1: #babac6;
+  --c2: #ffffff;
+  width: 100%;
+  position: relative;
+}
+.border-dashed-custom::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: var(--b);
+  background: repeating-conic-gradient(var(--c1) 0 25%, var(--c2) 0 50%) 0 0 /
+    var(--s) var(--s) round;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.welcomeTitle {
+  font-family: "AlbraText", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.aeonikProLight {
+  font-family: "AeonikProLight", serif;
+  font-weight: 400;
+}
